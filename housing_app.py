@@ -274,7 +274,7 @@ with tab1:
         }])
         
         # Scale features
-        input_scaled = st.session_state.scaler.transform(input_features)
+        input_scaled = st.session_state.scaler.transform(input_df)
         
         # Make prediction
         model = st.session_state.models[model_choice]
