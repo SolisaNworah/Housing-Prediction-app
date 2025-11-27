@@ -261,17 +261,17 @@ with tab1:
                 'Longitude': longitude
             }
         
-        # Create input array
-        input_features = np.array([[
-            features['MedInc'],
-            features['HouseAge'],
-            features['AveRooms'],
-            features['AveBedrms'],
-            features['Population'],
-            features['AveOccup'],
-            features['Latitude'],
-            features['Longitude']
-        ]])
+         # Create input as DataFrame with same feature names
+        input_df = pd.DataFrame([{
+            "MedInc": features["MedInc"],
+            "HouseAge": features["HouseAge"],
+            "AveRooms": features["AveRooms"],
+            "AveBedrms": features["AveBedrms"],
+            "Population": features["Population"],
+            "AveOccup": features["AveOccup"],
+            "Latitude": features["Latitude"],
+            "Longitude": features["Longitude"],
+        }])
         
         # Scale features
         input_scaled = st.session_state.scaler.transform(input_features)
